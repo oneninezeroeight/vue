@@ -128,3 +128,41 @@ console.log('hello world')
 
 - [webpack官方文档](https://www.webpackjs.com/concepts/)
 
+# loader
+
+loader 让 webpack 能够去处理那些非 JavaScript 文件（webpack 自身只理解 JavaScript）
+
+下面这句话的意思就是匹配所有以.txt为后缀的文件，将这些文件交给raw-loader去处理
+
+需要安装这个模块
+```bash
+npm install raw-loader --save-dev
+```
+
+```js
+{
+  output: {
+    filename: 'my-first-webpack.bundle.js'
+  },
+  module: {
+    rules: [
+      { test: /\.txt$/, use: 'raw-loader' },
+      // style-loader在前 css-loader在后
+      { test: /\.css$/, use: [ 'style-loader', 'css-loader' ] }
+    ]
+  }
+};
+```
+有了加载器，我们前端理论可以写各种后缀的文件，而最终通过webpack的加载器把这些文件统统转为JS，给浏览器识别使用
+
+我们在开发中经常会写scss，es6，最后发布的时候用css，es5，以前我们使用的三大模块(内置，三方和自定义)，那些都是泛指JS模块，现在有加载器，一切非JS，都可以称之为，JS加载器可以同化任何文件为JS
+
+> 一切可以是JS，终将用JS写
+
+# typescript
+
+JS的预编译语言，最终还是转化为JS
+```bash
+npm install --save-dev typescript awesome-typescript-loader source-map-loader
+```
+
