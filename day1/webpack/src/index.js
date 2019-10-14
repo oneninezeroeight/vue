@@ -1,0 +1,5 @@
+var $ = require('jquery')
+// var express = require('express')
+// var fs = require('fs')
+$('body').html('hello world')
+console.log('hello world')
