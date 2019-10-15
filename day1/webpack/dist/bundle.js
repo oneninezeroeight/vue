@@ -94,7 +94,18 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n// var $ = require('jquery')\n// // var express = require('express')\n// // var fs = require('fs')\n// var txt = require('./index.txt')\n// require('./index.css')\n// require('./index.scss')\n// var html = require('./index.html')\n// var jade = require('./index.jade')\n// console.log(jade())\n// console.log(txt.default)\n// $('body').html(txt.default + html + jade())\n// console.log('hello world')\nvar fn = function fn(a) {\n  return a + b;\n};\n\nvar _a$b = {\n  a: 'name',\n  b: 'skill'\n},\n    a = _a$b.a;\nvar b = [a].concat([1, 2, 3]);\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\n// var $ = require('jquery')\n// // var express = require('express')\n// // var fs = require('fs')\n// var txt = require('./index.txt')\n// require('./index.css')\n// require('./index.scss')\n// var html = require('./index.html')\n// var jade = require('./index.jade')\n// console.log(jade())\n// console.log(txt.default)\n// $('body').html(txt.default + html + jade())\n// console.log('hello world')\n__webpack_require__(/*! ./index.ts */ \"./src/index.ts\"); // const fn = (a) => (a + b)\n// let { a } = {\n//     a: 'name',\n//     b: 'skill'\n// }\n// let b = [a, ...[1, 2, 3]]\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/index.ts":
+/*!**********************!*\
+  !*** ./src/index.ts ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("var num = '1';\r\n// type 自动检查类型\r\n\n\n//# sourceURL=webpack:///./src/index.ts?");
 
 /***/ })
 
