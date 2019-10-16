@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="weui.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script src="vue.js"></script>
+    <!-- $(V).css(M) -->
+    <script>
+        Vue.author = {
+            name: 'yao',
+            skill: ['ps', 'css', 'js']
+        }
+        // 封装cookie，ajax，解析url，操作本地存储sessionStorage
+        Vue.prototype.ajax = () => {
+            console.log('ajax')
+        }
+        const vm = new Vue({
+            // 选项体现封装性
+            // 选项 在API里面放入选项
+            el: "#app",
+            // Model
+            data: {
+                name: 'yao',
+                bool: false
+            },
+            // View 视图层只能有一个根节点
+            template: `
+                <div>
+                    <button @click="toggle">弹窗</button>
+                    <div v-show="bool" class="weui-actionsheet weui-actionsheet_toggle" id="iosActionsheet">
+                        <div class="weui-actionsheet__title">
+                            <p class="weui-actionsheet__title-text">这是一个标题，可以为一行或者两行。</p>
+                        </div>
+                        <div class="weui-actionsheet__menu">
+                            <div class="weui-actionsheet__cell">示例菜单</div>
+                            <div class="weui-actionsheet__cell">示例菜单</div>
+                            <div class="weui-actionsheet__cell weui-actionsheet__cell_warn">负向菜单</div>
+                        </div>
+                        <div class="weui-actionsheet__action">
+                            <div class="weui-actionsheet__cell" id="iosActionsheetCancel">取消</div>
+                        </div>
+                    </div>
+                </div>
+            `,
+            // 注册方法
+            methods: {
+                toggle() {
+                    this.bool = !this.bool
+                    this.ajax()
+                    vm.ajax()
+                    console.log(Vue.author)
+                }
+            }
+
+        })
+        console.log(vm)
+        console.log(vm.$el)
+        console.log(vm.$data)
+        console.log(vm.name)
+        console.log(vm.name)
+    </script>
+</body>
+
+</html>

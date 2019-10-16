@@ -104,7 +104,10 @@ Vue下达给视图层的一个命令，这个命令可以更改视图层的效�
 <p v-show="0">隐藏</p>
 ```
 
-- v-text $().text()
+> $(View).css(Model)
+> $(View).show(Model)
+
+- v-text $().text()   {{}}
 - v-html $().html()
 - v-show $().show()
 - v-if $().remove() $().append()

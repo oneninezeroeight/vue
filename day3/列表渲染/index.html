@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="weui.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <!-- li重复就需要把v-for放入该标签的属性值里面面 -->
+            <li v-for="(item, index) in arr">
+                第{{index+1}}个为：姓名 {{item.name}}
+                <p v-for="skill in item.skill">{{skill}}</p>
+            </li>
+        </ul>
+        <select v-model="name">
+            <option v-for="item in arr" v-bind:value="item.name">{{item.name}}</option>
+        </select>
+        <p>{{name}}</p>
+        <p v-text="name"></p>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        const vm = new Vue({
+            // 选项体现封装性
+            // 选项 在API里面放入选项
+            el: "#app",
+            // Model
+            data: {
+                name: "gg",
+                arr: [{
+                    name: 'yao',
+                    skill: ['ps', 'css']
+                }, {
+                    name: 'tian',
+                    skill: ['ts', 'jade', 'less']
+                }, {
+                    name: 'gg',
+                    skill: ['sass']
+                }]
+            },
+        })
+    </script>
+</body>
+
+</html>

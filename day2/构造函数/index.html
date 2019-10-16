@@ -1,20 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        function Vue(obj){
-            this.name = obj.name
-        } 
+        function Vue(obj) {
+
+            // 共有属性
+            this.$el = obj.el
+            // 私有属性
+            // let el = 123
+            this.methods = obj.methods
+            this.$data = obj.data
+            // 闭包通道
+            // return function(){
+            //     return ++el
+            // }
+        }
+        // 继承属性
+        Vue.prototype.age = 18
+        // 静态属性 也是一种对象
+        Vue.skill = ['ps', 'js', 'css']
         const obj = new Vue({
-            name: 'yao'
+            el: '#app',
+            methods: {},
+            data: {}
         })
-        console.log(obj.name)
+        console.log(obj)
+        console.log(obj.el)
+        console.log(Vue.skill)
+        // 局部上升全局 内存上升
+        // 唯一从全局进去局部的一条通道
+        // let fn = Vue()
+        // fn()
+        // fn()
+        // fn()
+        // fn()
+        // fn()
+        // console.log(fn())
     </script>
 </body>
+
 </html>
