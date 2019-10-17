@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="weui.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p v-text="firstName+lastName"></p>
+        <p v-text="name"></p>
+        <p>{{name1()}}</p>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            // data: {
+            //     name: '123',
+            //     lastName: 'yao',
+            //     firstName: 'eno'
+            // },
+            // 这个数据可以来自于Model曾，也可以我们自己写死，或者来自于其他
+            // 用原始数据加工出来的
+            // 加工，运算，算法
+            // data里面和computed不能出现同一个属性值
+            // computed本质也是数据层，只是一个特殊的数据层，它带有函数逻辑(可加工)
+            // conputed是data的加强版本
+            computed: {
+                name() {
+                    return this.firstName + this.lastName
+                },
+                lastName() {
+                    return 'yao'
+                },
+                firstName() {
+                    return 'eno'
+                }
+            },
+            // methods也可以模仿computed的方法，但是methods不会缓存结果，但是computed缓存结果
+            // 内存消耗确实变大了，但是响应速度变快
+            methods: {
+                name1() {
+                    return this.firstName + this.lastName
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

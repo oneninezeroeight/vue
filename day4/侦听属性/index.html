@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="weui.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input v-model="name" />
+        <p v-text="name"></p>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                // name: '123',
+                lastName: 'yao',
+                firstName: 'eno'
+            },
+            // 缓存数据所以能被监听 计算得到结果
+            computed: {
+                name: {
+                    get() {
+                        return this.firstName + this.lastName
+                    },
+                    set(newValue) {
+                        this.firstName = newValue
+                        console.log(newValue)
+                    }
+                }
+            },
+            // 用于监听数据的变化
+            watch: {
+                name() {
+                    console.log('name正在发生改变')
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,6 +1,7 @@
 import Vue from 'vue/dist/vue'
 import template from './search.html'
 import txt from './search.txt'
+import observer from '../../tools/observer'
 const search = new Vue({
     el: '#search',
     data: {
@@ -20,12 +21,17 @@ const search = new Vue({
             console.log('点击了取消')
         },
         // 清空输入框
-        clear(){
+        clear() {
             this.searchText = ''
+        }
+    },
+    watch: {
+        // 监听搜索框
+        searchText() {
+            // 使用观察者模式
+            observer.emit('setSeatchText', this.searchText)
         }
     }
 })
-// this = search
-// console.log(search)
 
 export default search

@@ -1,12 +1,14 @@
 import Vue from 'vue/dist/vue'
 import template from './panel.html'
 import axios from 'axios'
+import observer from '../../tools/observer'
 const vm = new Vue({
     el: "#panel",
     data: {
         // 新闻数据
         news: [],
-        page: 1
+        page: 1,
+        searchText: ''
     },
     template,
     methods: {
@@ -26,7 +28,26 @@ const vm = new Vue({
                 console.log(data)
             })
         }
+    },
+    computed: {
+        newsComputed() {
+            console.log(searchText)
+            // 有搜索值的时候就执行过滤逻辑，否则原封不动返回原数组
+            if (this.searchText) {
+                return this.news.filter((item) => {
+                    if (item.title.indexOf(this.searchText) != -1) {
+                        return item
+                    }
+                })
+            } else {
+                return this.news
+            }
+        }
     }
+})
+console.log(observer)
+observer.on('setSeatchText', (searchText) => {
+    vm.searchText = searchText
 })
 vm.getNews()
 export default vm
