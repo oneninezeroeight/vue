@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- is接受一个组件的名字，并显示该组件 -->
+        <component :is="componentName"></component>
+        <button @click="toggle('we-chat')">微信</button>
+        <button @click="toggle('con-tact')">通讯录</button>
+        <button @click="toggle('re-cover')">发现</button>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        Vue.component('we-chat', {
+            data() {
+                return {
+                    title: '微信'
+                }
+            },
+            template: `
+                <header style="margin: 20px; border: 1px solid red">
+                    <p v-text="title"></p>
+                </header>
+            `
+        })
+        Vue.component('con-tact', {
+            data() {
+                return {
+                    title: '通讯录'
+                }
+            },
+            template: `
+                <header style="margin: 20px; border: 1px solid red">
+                    <p v-text="title"></p>
+                </header>
+            `
+        })
+        Vue.component('re-cover', {
+            data() {
+                return {
+                    title: '发现'
+                }
+            },
+            template: `
+                <header style="margin: 20px; border: 1px solid red">
+                    <p v-text="title"></p>
+                </header>
+            `
+        })
+        new Vue({
+            el: "#app",
+            data: {
+                componentName: 'we-chat'
+            },
+            methods:{
+                toggle(componentName){
+                    this.componentName = componentName
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

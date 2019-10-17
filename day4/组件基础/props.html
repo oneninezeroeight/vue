@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 组件上面如果有属性键值对，那么组件本身是可以接受这些属性值的 -->
+        <!-- props可以放任何类型 -->
+        <!-- 父子通信 -->
+        <eno-header :name="lastName"></eno-header>
+        <eno-header name="456"></eno-header>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        Vue.component('eno-child', {
+            template: `
+                <header style="margin: 20px; border: 1px solid blue">
+                    <div>子组件</div>
+                </header>
+            `
+        })
+        Vue.component('eno-header', {
+            // 获取自身标签上的属性值：name 在组件内部可以使用this.name调用
+            props: ['name'],
+            data() {
+                return {
+                    title: '第一个组件'
+                }
+            },
+            template: `
+                <header style="margin: 20px; border: 1px solid red">
+                    <input v-model="title" />
+                    <div v-text="title"></div>
+                    <p v-text="name"></p>
+                    <slot></slot>
+                </header>
+            `
+        })
+        new Vue({
+            el: "#app",
+            data: {
+                lastName: 'yao',
+                firstName: 'eno'
+            }
+        })
+    </script>
+</body>
+
+</html>

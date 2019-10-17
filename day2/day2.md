@@ -117,7 +117,7 @@ Vue下达给视图层的一个命令，这个命令可以更改视图层的效�
 - v-on $().on() 绑定事件
 - v-bind $().attr().css().addClass().removeClass() 更改属性值
 - v-model $().val()
-- v-slot 插槽
+- v-slot 具名插槽
 - v-pre 让{{name}} 声明式失效
 - v-cloak 让{{name}} 完全编译成功之后再出现
 - v-once 让{{name}} 只能编译一次

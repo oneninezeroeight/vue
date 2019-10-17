@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 自定义一个事件，该事件名enlarge-text，该事件的方法为fn -->
+        <eno-header v-on:enlarge-text="fn"></eno-header>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        Vue.component('eno-header', {
+            data() {
+                return {
+                    num: 1
+                }
+            },
+            template: `
+                <header style="margin: 20px; border: 1px solid red">
+                    <input v-model="num" />
+                    <button v-on:click="$emit('enlarge-text', num)">Ok</button>
+                </header>
+            `
+        })
+        new Vue({
+            el: "#app",
+            data: {
+                num: 1
+            },
+            methods: {
+                // 老爸的事件
+                fn(num) {
+                    this.num = num
+                    console.log(num)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
