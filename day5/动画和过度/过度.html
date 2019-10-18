@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        /* 动画周期的定义，是一个完整的定式 */
+        /* 进场和离场的持续效果 */
+        .fade-enter-active,
+        .fade-leave-active {
+            /* 过度 */
+            transition: opacity 3s;
+        }
+
+        /* 进场前的状态 */
+        .fade-enter,
+        /* 离场后的状态 */
+        .fade-leave-to
+
+        /* .fade-leave-active below version 2.1.8 */
+            {
+            opacity: 0;
+        }
+
+        /* 进场后的状态 */
+        .fade-enter-to,
+        /* 离场前的状态 */
+        .fade-leave
+
+        /* .fade-leave-active below version 2.1.8 */
+            {
+            opacity: 1;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="demo">
+        <button @click="bool=!bool">切换</button>
+        <transition name="fade">
+            <p v-show="bool">动画</p>
+        </transition>
+        <transition name="fade">
+            <p v-if="bool">动画</p>
+        </transition>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el: "#demo",
+            data: {
+                bool: true
+            }
+        })
+    </script>
+</body>
+
+</html>

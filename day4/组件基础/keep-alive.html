@@ -13,7 +13,10 @@
         <!-- is接受一个组件的名字，并显示该组件 -->
         <!-- componentName变化，一个组件必须离场，另一个组件进场 -->
         <!-- 正常的选项卡，是一个显示，另一个隐藏 -->
-        <component :is="componentName"></component>
+        <!-- 用全局变量做局部页面的缓存 -->
+        <keep-alive>
+            <component :is="componentName"></component>
+        </keep-alive>
         <button @click="toggle('we-chat')">微信</button>
         <button @click="toggle('con-tact')">通讯录</button>
         <button @click="toggle('re-cover')">发现</button>
@@ -28,6 +31,7 @@
             },
             template: `
                 <header style="margin: 20px; border: 1px solid red">
+                    <input v-model="title" />
                     <p v-text="title"></p>
                 </header>
             `
@@ -61,8 +65,8 @@
             data: {
                 componentName: 'we-chat'
             },
-            methods:{
-                toggle(componentName){
+            methods: {
+                toggle(componentName) {
                     this.componentName = componentName
                 }
             }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        /* 如果用animation而不是transition，只需要两个周期，进场和离场间的周期 */
+        .bounce-enter-active {
+            animation: bounce-in 5s;
+        }
+
+        .bounce-leave-active {
+            animation: bounce-in 5s reverse;
+        }
+
+        @keyframes bounce-in {
+            0% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(1.5);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="demo">
+        <button @click="bool=!bool">切换</button>
+        <transition name="bounce">
+            <p v-show="bool">动画</p>
+        </transition>
+        <transition name="bounce">
+            <p v-if="bool">动画</p>
+        </transition>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        new Vue({
+            el: "#demo",
+            data: {
+                bool: true
+            }
+        })
+    </script>
+</body>
+
+</html>
