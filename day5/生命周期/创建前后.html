@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: "#demo",
+            data: {
+                name: 'yao'
+            },
+            render() {},
+            // template:`
+            //     <div>{{name}}</div>
+            // `,
+            
+            // 监听该实例创建前的行为
+            beforeCreate() {
+                console.log('-------beforeCreate-------')
+                console.log('V', this.$el)
+                console.log('M', this.$data)
+                // 你可以在这里放入创建之前你想触发的行为
+                // 触发一些方法
+            },
+            created() {
+                console.log('-------created-------')
+                console.log('V', this.$el)
+                console.log('M', this.$data)
+                // 你可以在这里放入创建之前你想触发的行为
+                // 触发一些方法
+            },
+            // 挂载前
+            beforeMount() {
+                console.log('-------beforeMount-------')
+                console.log('V', this.$el)
+                console.log('M', this.$data)
+                // 你可以在这里放入创建之前你想触发的行为
+                // 触发一些方法
+            },
+            // 处理模板
+            render(h) {
+                console.log('-------render-------')
+                let vdom2 = h('p', null, this.name)
+                vdom2.tag = 'div'
+                let vdom = h('div', null, [vdom2])
+                
+                console.log(vdom,vdom2)
+                return vdom
+            },
+            // 挂载后
+            mounted() {
+                console.log('-------mounted-------')
+                console.log('V', this.$el)
+                console.log('M', this.$data)
+                // 你可以在这里放入创建之前你想触发的行为
+                // 触发一些方法
+            },
+            // 这个在创建前可用
+            methods: {}
+        })
+        
+        // Vue在实例化的时候会把数据初始化，然后拼接模板，模板渲染到DOM上
+        // 而这些经历的过程会全部被生命周期捕捉到
+    </script>
+</body>
+
+</html>
