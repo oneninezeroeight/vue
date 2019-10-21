@@ -7,7 +7,8 @@ class ComponentName extends WeElement {
       null,
       "hello world",
       h("p", null, "abc"),
-      h("p", null, name)
+      h("p", null, name),
+      h("p", null, "123")
     );
   }
 }

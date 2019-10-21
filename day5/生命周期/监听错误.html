@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <component :is="componentName"></component>
+        <button @click="toggle('we-chat')">微信</button>
+        <button @click="toggle('con-tact')">通讯录</button>
+        <button @click="toggle('re-cover')">发现</button>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        // 销毁可用于，该组件进场会把一些全局或者特有的逻辑执行，但是组件离开的时候，你需要把这些逻辑全部清楚，不然会影响其他组件
+        Vue.component('we-chat', {
+            data() {
+                return {
+                    // 定时器
+                    timer: null
+                }
+            },
+            created() {
+                this.timer = window.setInterval(() => {
+                    console.log('触发定时器')
+                }, 1000)
+                new abc
+            },
+            data() {
+                return {
+                    title: '微信'
+                }
+            },
+            template: `
+                <header style="margin: 20px; border: 1px solid red">
+                    <input v-model="title" />
+                    <p v-text="title"></p>
+                </header>
+            `,
+            beforeDestroy() {
+                // 销毁全局定时器
+                clearInterval(this.timer)
+                console.log('销毁前')
+            },
+            destroyed() {
+                console.log('销毁后')
+            },
+            
+        })
+        Vue.component('con-tact', {
+            data() {
+                return {
+                    title: '通讯录'
+                }
+            },
+            template: `
+                <header style="margin: 20px; border: 1px solid red">
+                    <p v-text="title"></p>
+                </header>
+            `
+        })
+        Vue.component('re-cover', {
+            data() {
+                return {
+                    title: '发现'
+                }
+            },
+            template: `
+                <header style="margin: 20px; border: 1px solid red">
+                    <p v-text="title"></p>
+                </header>
+            `
+        })
+        new Vue({
+            el: "#app",
+            data: {
+                componentName: 'we-chat'
+            },
+            methods: {
+                toggle(componentName) {
+                    this.componentName = componentName
+                }
+            },
+            // 如果该组件里面的子组件发生错误，将会触发该生命周期
+            // 全局监听错误监听
+            errorCaptured(err, vm, info) {
+                console.log(err, vm, info)
+            }
+        })
+    </script>
+</body>
+
+</html>

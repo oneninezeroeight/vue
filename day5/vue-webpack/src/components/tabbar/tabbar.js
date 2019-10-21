@@ -39,7 +39,7 @@ export default Vue.component('eno-tabbar', {
             this.offset = index
             // 传递tabbar选项卡的索引值
             observer.emit('setTabbar', index)
-            console.log(index)
+            // console.log(index)
         }
     }
 })

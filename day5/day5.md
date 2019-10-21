@@ -26,20 +26,26 @@
 `new Vue`
 
 - 创建前后 
-    - beforeCreate
-    - created
+    - beforeCreate 什么都没有
+    - created 有数据
 - 挂载前后
-    - beforeMount
-    - render
-    - mounted
+    - beforeMount 找到挂载点，准备放入模板
+    - render 生成虚拟DOM
+    - mounted 把虚拟DOM挂载真实DOM，挂载点渲染虚拟DOM
+
+---上面这些都执行一次---
+
 - 更新前后
-    - beforeUpdate
-    - render
-    - updated
-- 是否被激活 keep-alive
+    - beforeUpdate 先更新数据
+    - render ，生成一份新的虚拟DOM 优化比对旧的虚拟dom
+    - updated 完成局部更新
+- 是否被激活 keep-alive 销毁真实DOM，保留虚拟DOM，数据状态才得以保存
     - activated
     - deactivated
-- 销毁前后
+
+---上面这些根据数据和视图变化触发多次---
+
+- 销毁前后 真实DOM和虚拟DOM都销毁 `<component is="xxx">`和`v-if`都会触发销毁
     - beforeDestroy
     - destroyed
 - 监听路由错误
@@ -74,6 +80,7 @@ const vdom = h(
 ```
 
 ```js
+// 第一份镜像
 const vdom = {
     tag: 'div',
     text: undefined,
@@ -82,7 +89,7 @@ const vdom = {
         text: 'yao'
     }]
 }
-
+// 第二份镜像
 const vdom = {
     tag: 'div',
     text: undefined,
@@ -95,3 +102,7 @@ const vdom = {
 虚拟DOM对象执行便利转化真实DOM结构
 虚拟DOM存在内存里面，我们会存起来
 obj->html结构
+
+# 单文件组件
+
+后缀为`.vue`的文件，把html视图层，js，css全部放到这个文件里面处理

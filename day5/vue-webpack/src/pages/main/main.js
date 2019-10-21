@@ -25,7 +25,7 @@ export default Vue.component('eno-main', {
                     break;
 
             }
-            console.log(index)
+            // console.log(index)
         })
     }
 })

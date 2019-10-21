@@ -3,5 +3,6 @@
         hello world
         <p>abc</p>
         <p>{name}</p>
+        <p>123</p>
     </div>
 </template>

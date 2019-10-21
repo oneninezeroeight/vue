@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: "#demo",
+            data: {
+                name: 'yao'
+            },
+            render(){},
+            // 处理模板
+            template:`
+                <div>
+                    <input v-model="name" />
+                    <p v-text="name"></p>
+                </div>
+            `,
+            // 更新前后一般用得很好，我们触发更新，一般MV发生了改变 监听所有的数据
+            // watch监听数据变化触发逻辑 监听单独一个数据
+            beforeUpdate(){
+                console.log('-------beforeUpdate-------')
+                console.log('V', this.$el.innerHTML)
+                console.log('M', this.$data)
+            },
+            updated(){
+                console.log('-------updated-------')
+                console.log('V', this.$el.innerHTML)
+                console.log('M', this.$data)
+            }
+        })
+    </script>
+</body>
+
+</html>
