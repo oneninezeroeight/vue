@@ -25,6 +25,25 @@ plugins: [
 ]
 ```
 
+配置webpack服务器
+
+```bash
+npm install webpack-dev-server --save-dev -g
+```
+配置webpack.config.js
+```js
+// 配置webpack的服务器
+devServer: {
+    contentBase: path.join(__dirname, "dist"),
+    compress: true,
+    port: 9000
+}
+```
+全局安装完之后，执行以下命令，启动服务器，并访问`http://localhost:9000`
+```
+webpack-dev-server
+```
+
 # vue
 
 vue读音view，既然这样都，可以看出来，vue比较注重视图层
