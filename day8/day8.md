@@ -39,3 +39,93 @@ console.log(token)
 token把密码的信息转为后端能识别乱码
 
 令牌就密码的另外一种形态
+
+# 路由动画
+
+可以给路由转场动画
+```html
+<template>
+  <div id="app">
+    <router-link :to="{ name: 'home'}">home</router-link>|
+    <router-link :to="{ name: 'mine'}">mine</router-link>
+    <!-- 路由的渲染舞台 -->
+    <transition name="bounce">
+      <keep-alive>
+        <router-view />
+      </keep-alive>
+    </transition>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "app",
+  components: {}
+};
+</script>
+
+<style>
+.bounce-enter-active {
+    animation: bounce-in 5s;
+}
+
+.bounce-leave-active {
+    animation: bounce-in 5s reverse;
+}
+
+@keyframes bounce-in {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+</style>
+```
+
+# $route
+
+当我们路由发生改变可以监听该属性触发对应的逻辑
+```js
+watch: {
+  '$route' (to, from) {
+    const toDepth = to.path.split('/').length
+    const fromDepth = from.path.split('/').length
+    this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+  }
+}
+```
+
+# 滚动行为
+
+记录滚动的距离
+```js
+scrollBehavior(to, from, savedPosition) {
+    console.log(to, from, savedPosition)
+    if (savedPosition) {
+        return savedPosition
+    } else {
+        return {
+            x: 0,
+            y: 0
+        }
+    }
+    // return 期望滚动到哪个的位置
+}
+```
+
+# 懒加载
+
+改为回调
+```js
+component: () => {
+    // 懒加载
+    return import('../views/Mine.vue')
+},
+```
