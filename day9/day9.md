@@ -155,4 +155,33 @@ import { mapMutations } from "vuex";
 
 - this.$store.state.author
 - this.$store.commit('setAuthor', 'jing')
-- ...mapMutations(["setAuthor"]),
+- ...mapMutations(["setAuthor"])
+
+<img src="2.png" />
+
+action修改数据本质是触发mutations
+```js
+// 异步修改
+actions: {
+  setAuthor(context, data) {
+    // action修改数据的本质是触发mutations
+    context.commit('setAuthor', data)
+  }
+}
+```
+
+- ...mapActions(["setAuthor"])
+- this.$store.dispatch('setAuthor', 'jing')
+
+
+如果您不打算开发大型单页应用，使用 Vuex 可能是繁琐冗余的。确实是如此——如果您的应用够简单，您最好不要使用 Vuex。一个简单的 store 模式就足够您所需了。但是，如果您需要构建一个中大型单页应用，您很可能会考虑如何更好地在组件外部管理状态，Vuex 将会成为自然而然的选择。引用 Redux 的作者 Dan Abramov 的话说就是：
+
+# 混入 (mixin) 
+
+提供了一种非常灵活的方式，来分发 Vue 组件中的可复用功能。
+
+为了复用方法
+
+# 自定义指令
+
+封装相同操作DOM的方法

@@ -1,7 +1,7 @@
 <template>
   <div class="weui-panel weui-panel_access">
     <div class="weui-panel__bd">
-      <router-link
+      <a
         v-for="(item,index) in newsComputed"
         :key="index"
         href="javascript:void(0);"
@@ -16,14 +16,14 @@
           }
         }"
       >
-        <div class="weui-media-box__hd">
-          <img class="weui-media-box__thumb" :src="item.author.avatar_url" alt />
+        <div @click="showGallery(item.author.avatar_url)" class="weui-media-box__hd">
+          <img v-radius class="weui-media-box__thumb" :src="item.author.avatar_url" alt />
         </div>
-        <div class="weui-media-box__bd">
+        <div @click="navToDetail(index)" class="weui-media-box__bd">
           <h4 class="weui-media-box__title" v-text="item.title"></h4>
           <p class="weui-media-box__desc">{{item.author.loginname|captian}}</p>
         </div>
-      </router-link>
+      </a>
     </div>
     <div @click="getNews" class="weui-panel__ft">
       <a href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link">
@@ -34,6 +34,7 @@
   </div>
 </template>
 <script>
+import { mapActions } from "vuex";
 import axios from "axios";
 import observer from "../../tools/observer";
 export default {
@@ -49,6 +50,8 @@ export default {
     };
   },
   methods: {
+    // 取出仓库修改gallery状态的方法
+    ...mapActions(["setGalleryStatus"]),
     getNews() {
       let _self = this;
       axios
@@ -66,6 +69,26 @@ export default {
           _self.news = [..._self.news, ...data.data.data];
           console.log(data);
         });
+    },
+    // 跳转详情页
+    navToDetail(index) {
+      this.$router.push({
+        name: "detail",
+        params: {
+          id: index
+        },
+        query: {
+          name: "yao"
+        }
+      });
+    },
+    // 显示图片预览
+    showGallery(imgUrl) {
+      this.setGalleryStatus({
+        imgUrl,
+        isShow: true
+      });
+      console.log(imgUrl);
     }
   },
   computed: {

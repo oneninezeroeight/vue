@@ -1,11 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 Vue.use(Vuex)
 console.log(Vuex)
 const store = new Vuex.Store({
   // 仓库 交换数据的源头
   state: {
-    author: 'lin'
+    author: 'lin',
+    // 新闻数据
+    news:[]
   },
   // 获取state的方法
   getters: {
@@ -19,9 +22,23 @@ const store = new Vuex.Store({
   mutations: {
     setAuthor(state, data) {
       state.author = data
+    },
+    setNews(state, data) {
+      state.news = data
     }
   },
-  actions: {}
+  // 异步修改
+  actions: {
+    setAuthor(context, data) {
+      // action修改数据的本质是触发mutations
+      context.commit('setAuthor', data)
+    },
+    async setNews(context){
+      const data = await axios.get('https://cnodejs.org/api/v1/topics')
+      console.log(data.data.data)
+      context.commit('setNews', data.data.data)
+    }
+  }
 })
 import App from './App.vue'
 

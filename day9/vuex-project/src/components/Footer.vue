@@ -5,12 +5,20 @@
   </div>
 </template>
 <script>
+import {
+  mapState,
+} from "vuex";
 import store from '../stores/index.js'
 export default {
   name: "Footer",
   data(){
     return store
-  }
+  },
+  computed: {
+    ...mapState({
+      news: state => state.news
+    })
+  },
 };
 </script>
 <style scoped>

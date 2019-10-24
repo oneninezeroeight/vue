@@ -1,5 +1,5 @@
 <template>
-    <header :style="{
+    <header v-color="'white'" :style="{
         backgroundColor: color
     }">
         <slot></slot>
