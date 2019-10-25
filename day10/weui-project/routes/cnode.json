@@ -1,0 +1,164 @@
+{
+    "success": true,
+    "data": [{
+        "id": "5db045a7865a9844a301d579",
+        "author_id": "5db04584865a9844a301d575",
+        "tab": "ask",
+        "content": "你好！可以吧网站做成小程序吗？",
+        "title": "你好！可以吧网站做成小程序吗？",
+        "last_reply_at": "2019-10-25T02:48:09.046Z",
+        "good": false,
+        "top": false,
+        "reply_count": 2,
+        "visit_count": 354,
+        "create_at": "2019-10-23T12:20:55.020Z",
+        "author": {
+            "loginname": "bin008",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/26684679?v=4&s=120"
+        }
+    }, {
+        "id": "5db261bdece3813ad9ba424b",
+        "author_id": "5dab3db2ece3813ad9ba2eca",
+        "tab": "ask",
+        "content": "用户通过第三方应用（如Github）登录时，如果为新用户，那么跳转到确认用户信息页面，第三方应用返回的用户信息是不是应该用redis做缓存才行？要不确认用户信息页面怎么能知道第三方返回的用户信息呢？\r\n谢谢！",
+        "title": "【新手】用户注册时分两个步骤，请问临时数据是不是要用redis来保存？",
+        "last_reply_at": "2019-10-25T02:45:17.044Z",
+        "good": false,
+        "top": false,
+        "reply_count": 0,
+        "visit_count": 21,
+        "create_at": "2019-10-25T02:45:17.044Z",
+        "author": {
+            "loginname": "sytana",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/11701135?v=4&s=120"
+        }
+    }, {
+        "id": "5db256ab865a9844a301dad9",
+        "author_id": "58e595052f893c6b06969a25",
+        "tab": "ask",
+        "content": "您好各位同學有些環境的問題想請教\r\n\r\n場景大概如下敘述：\r\n\r\n後台主要是員工會輸入資料與上傳檔案(照片,文件等等)，而前台是客戶登入與查看相關資訊為主，\r\n\r\n目前環境是在阿里雲(深圳)架設服務，然後透過香港反向代理回深圳服務，\r\n\r\n後台直接連深圳服務器延遲很低，但是要是走香港反向代理延遲就高許多，上傳檔案速度就會差很多，一天至少有500-1000的上傳需求，\r\n\r\n客戶主要都在國外，所以都是走香港代理掛.com的域名，\r\n\r\n問題如下:\r\n\r\n現在因為要在其他國家(日本、韓國)開設後台站點，有後台上傳需求,想換一個環境(AWS GoogleCloud Vultr ...)，不知道有沒有人推薦的方式？",
+        "title": "服務架設區域問題",
+        "last_reply_at": "2019-10-25T01:58:03.684Z",
+        "good": false,
+        "top": false,
+        "reply_count": 0,
+        "visit_count": 46,
+        "create_at": "2019-10-25T01:58:03.684Z",
+        "author": {
+            "loginname": "babto",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/10649992?v=3&s=120"
+        }
+    }, {
+        "id": "5db011da865a9844a301d49e",
+        "author_id": "5b3ed1d013ca2fe569fb9131",
+        "tab": "ask",
+        "content": "在nodejs 环境下如何实现装饰器，有了解的大佬指点下哈，想实现如下功能。\r\n\r\n```js\r\nclass Boy {\r\n  @run\r\n  speak() {\r\n    console.log(\"I can speak\");\r\n  }\r\n}\r\nfunction run() {\r\n  console.log(\"I can run\");\r\n}\r\n\r\nlet tj = new Boy();\r\ntj.speak();\r\n```",
+        "title": "nodejs 环境下如何实现装饰器",
+        "last_reply_at": "2019-10-25T00:50:34.157Z",
+        "good": false,
+        "top": false,
+        "reply_count": 5,
+        "visit_count": 441,
+        "create_at": "2019-10-23T08:39:54.981Z",
+        "author": {
+            "loginname": "ddzyan",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/9130123?v=4&s=120"
+        }
+    }, {
+        "id": "5d9eabdf865a9844a301a59c",
+        "author_id": "595d976b10d696af07768a24",
+        "tab": "ask",
+        "content": "* 启动方式\r\n![image.png](//static.cnodejs.org/FpfJDPCTjOcjzPCyfAm3yfdmfW9P)\r\n\r\n* alinode应用正常\r\n![image.png](//static.cnodejs.org/FsAbzvHsHfBdP0rna_mfd73WZZrb)\r\n\r\n* docker里的common-error.log有报错信息\r\n![image.png](//static.cnodejs.org/FiUTT_biK0sM1CNSb969I0z6VDVe)\r\n\r\n* alinode配置\r\n![image.png](//static.cnodejs.org/FpKi5H5UL-oGHqj7ljNxjqdzROM7)\r\n\r\n* alinode没有异常日志\r\n![image.png](//static.cnodejs.org/FhacK8sMDsirkEn6Ucpk2kdgmCcy)",
+        "title": "egg+docker单进程启动，alinode抓不到异常日志",
+        "last_reply_at": "2019-10-24T13:03:42.145Z",
+        "good": false,
+        "top": false,
+        "reply_count": 3,
+        "visit_count": 907,
+        "create_at": "2019-10-10T03:56:15.904Z",
+        "author": {
+            "loginname": "18820227745",
+            "avatar_url": "https://avatars0.githubusercontent.com/u/25097125?v=4&s=120"
+        }
+    }, {
+        "id": "5dafe935865a9844a301d33f",
+        "author_id": "580f166dcf18d0333412d19a",
+        "tab": "ask",
+        "content": "请教一下，egg框架如果使用微服务有相应好用的插件吗？或者有木有例子可以请教一下呀，我搜了好多有关的东西因为没有这方面的经验不知道应该选用哪一个，谢谢各位！",
+        "title": "请问一下egg框架有有关微服务方面的方案吗？",
+        "last_reply_at": "2019-10-24T08:37:36.994Z",
+        "good": false,
+        "top": false,
+        "reply_count": 4,
+        "visit_count": 475,
+        "create_at": "2019-10-23T05:46:29.449Z",
+        "author": {
+            "loginname": "hewentaowx",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/22340341?v=4&s=120"
+        }
+    }, {
+        "id": "5db10d5cece3813ad9ba3dc6",
+        "author_id": "54ed583a13a640c2725d8560",
+        "tab": "ask",
+        "content": "import('xxx'), 的代码没能分割\r\n如图： 有遇到的大佬么？\r\n![image.png](//static.cnodejs.org/FtJOCWZDI8ufOV6R5DPGEqMy2FRG)\r\n\r\n![image.png](//static.cnodejs.org/FuEEJRhraqsDPWGKizrvFdxmugh9)",
+        "title": "webpack4 使用模块异步加载的问题，import('xxx'), 的代码没能分割",
+        "last_reply_at": "2019-10-24T03:38:11.642Z",
+        "good": false,
+        "top": false,
+        "reply_count": 1,
+        "visit_count": 135,
+        "create_at": "2019-10-24T02:33:00.364Z",
+        "author": {
+            "loginname": "weivea",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/8197845?v=4&s=120"
+        }
+    }, {
+        "id": "5db113f5865a9844a301d711",
+        "author_id": "5807253a487e1e4578afb648",
+        "tab": "ask",
+        "content": "各位大牛好,小弟最近遇到一个server端短暂挂起的原因,想请教下各位.\r\n是这样的,我们的nodejs server有一个healthcheck机制,就是对外提供一个接口,然后我们有一个server会每过30秒去调用这个接口,看当前server的运行情况,超时时间为15秒,,如果超时会报警,目前遇到的问题是会突发性的出现报警信息,没有规律,间隔几个小时,我们猜测是server繁忙,没有响应healthcheck接口,但是我们看了server的内存和cpu占有率都是正常的,而且只会突发性的报一次警,我们也尝试抓了cpuprofile,但是都是在正常情况下抓的,所以没看出个所以然,我想请教各位大神有没有什么好的办法来分析这个问题,找出server不响应的根源",
+        "title": "求助:server端无响应问题",
+        "last_reply_at": "2019-10-24T03:01:09.077Z",
+        "good": false,
+        "top": false,
+        "reply_count": 0,
+        "visit_count": 121,
+        "create_at": "2019-10-24T03:01:09.077Z",
+        "author": {
+            "loginname": "sx1989827",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/5820929?v=4&s=120"
+        }
+    }, {
+        "id": "5dafbce7ece3813ad9ba39a4",
+        "author_id": "5d8386c053c75a4136b4bdd1",
+        "tab": "ask",
+        "content": "打包命令：\"pkg . -t node12-win,node12-linux --out-path=dist/\"；\r\nwin10下执行正常；\r\n红帽6.8，报错；\r\n实在不理解为什么会是这个oracledb包（以前也是，但是  -  是公网环境，直接在环境中下载，安装的oracledb包）\r\n![image.png](//static.cnodejs.org/FhEF7qiH2W25BGxP1mczvGmnX6nO)",
+        "title": "pkg在win10下打包在红帽6.8下运行报错？",
+        "last_reply_at": "2019-10-24T01:44:14.274Z",
+        "good": false,
+        "top": false,
+        "reply_count": 4,
+        "visit_count": 296,
+        "create_at": "2019-10-23T02:37:27.352Z",
+        "author": {
+            "loginname": "LeavesSky",
+            "avatar_url": "https://avatars2.githubusercontent.com/u/32787330?v=4&s=120"
+        }
+    }, {
+        "id": "5dad2d07865a9844a301c97a",
+        "author_id": "5bc6779d37a6965f5905229a",
+        "tab": "ask",
+        "content": "使用egg.js时，老是发生errno:\"ECONNRESET\"的错误，请问各位有建议吗？\r\n\r\n2019-10-21 10:35:53,528 ERROR 14496 nodejs.ECONNRESETError: read ECONNRESET (uncaughtException throw 1 times on pid:14496)\r\n    at TCP.onStreamRead (internal/stream_base_commons.js:167:27)\r\nerrno: \"ECONNRESET\"\r\ncode: \"ECONNRESET\"\r\nsyscall: \"read\"\r\nname: \"ECONNRESETError\"\r\npid: 14496\r\nhostname: solomon001\r\n\r\n我上网找到的信息指出：\r\nhttps://blog.csdn.net/weixin_33834910/article/details/85830742\r\n问题原因\r\n出现该问题的原因是：Node.js提供的HttpServer默认设置了超时时间为2分钟，当一个请求的处理时间超过2分钟，HttpServer会自动将该请求的socket关闭掉，于是客户端便收到了 ECONNRESET 的错误信息了。可以参考Node.js的源码。\r\n\r\n因此我在egg.js的config\\config.default.js里加入一个配置\r\nconfig.serverTimeout = 0;\r\n\r\n然後持续观察，看看网友们有没有啥经验可以给我建议，谢谢\r\n\r\n/////////////////////////////改完後，又發生了！/////////////////////////////////\r\n[Mon Oct 21 2019 13:38:05 GMT+0800 (GMT+08:00)] [graceful:worker:15220:uncaughtException] throw error 2 times\r\n{ ECONNRESETError: read ECONNRESET (uncaughtException throw 2 times on pid:15220)\r\n    at TCP.onStreamRead (internal/stream_base_commons.js:167:27)\r\n  errno: 'ECONNRESET',\r\n  code: 'ECONNRESET',\r\n  syscall: 'read',\r\n  name: 'ECONNRESETError' }\r\nECONNRESETError: read ECONNRESET (uncaughtException throw 2 times on pid:15220)\r\n    at TCP.onStreamRead (internal/stream_base_commons.js:167:27)\r\nECONNRESETError: read ECONNRESET (uncaughtException throw 2 times on pid:15220)\r\n    at TCP.onStreamRead (internal/stream_base_commons.js:167:27)\r\nNode NOT Exiting...\r\n[2019-10-21 13:38:05.154] [cfork:master:12608] worker:15220 disconnect (exitedAfterDisconnect: true, state: disconnected, isDead: false, worker.disableRefork: false)\r\n[2019-10-21 13:38:05.154] [cfork:master:12608] don't fork new work (refork: false)\r\n2019-10-21 13:38:05,154 INFO 12608 [master] app_worker#2:15220 disconnect, suicide: true, state: disconnected, current workers: [\"2\"]\r\n[Mon Oct 21 2019 13:38:35 GMT+0800 (GMT+08:00)] [graceful:worker:15220] kill timeout, exit now.\r\n2019-10-21 13:38:35,404 ERROR 15220 [app_worker] exit with code:1\r\n2019-10-21 13:38:35,427 WARN 18436 [ClusterClient:Connection] socket is closed by other side while there were still unhandled data in the socket buffer\r\n[2019-10-21 13:38:35.436] [cfork:master:12608] worker:15220 exit (code: 1, exitedAfterDisconnect: true, state: dead, isDead: true, isExpected: true, worker.disableRefork: false)\r\n2019-10-21 13:38:35,437 ERROR 12608 nodejs.AppWorkerDiedError: [master] app_worker#2:15220 died (code: 1, signal: null, suicide: true, state: dead), current workers: []\r\n    at Master.onAppExit (D:\\Webapp\\node_modules\\egg-cluster\\lib\\master.js:510:21)\r\n    at Master.emit (events.js:197:13)\r\n    at Messenger.sendToMaster (D:\\Webapp\\node_modules\\egg-cluster\\lib\\utils\\messenger.js:137:17)\r\n    at Messenger.send (D:\\Webapp\\node_modules\\egg-cluster\\lib\\utils\\messenger.js:102:12)\r\n    at EventEmitter.cluster.on (D:\\Webapp\\node_modules\\egg-cluster\\lib\\master.js:353:22)\r\n    at EventEmitter.emit (events.js:202:15)\r\n    at ChildProcess.worker.process.once (internal/cluster/master.js:186:13)\r\n    at Object.onceWrapper (events.js:285:20)\r\n    at ChildProcess.emit (events.js:197:13)\r\n    at Process.ChildProcess._handle.onexit (internal/child_process.js:254:12)\r\nname: \"AppWorkerDiedError\"\r\npid: 12608\r\nhostname: solomon001\r\n/////////////////////////////////////////////////////////////////////",
+        "title": "使用egg.js时，老是发生errno:\"ECONNRESET\"的错误，请问各位有建议吗？",
+        "last_reply_at": "2019-10-24T00:56:07.678Z",
+        "good": false,
+        "top": false,
+        "reply_count": 7,
+        "visit_count": 792,
+        "create_at": "2019-10-21T03:59:03.164Z",
+        "author": {
+            "loginname": "Solomonqoo",
+            "avatar_url": "https://avatars3.githubusercontent.com/u/44214486?v=4&s=120"
+        }
+    }]
+}

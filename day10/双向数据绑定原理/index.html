@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+    </div>
+    <script>
+        // M 数据变化的时候，立即修改视图
+        // M->V
+        var data = {
+            num: 0
+        }
+        Object.defineProperty(data, 'num', {
+            set(newValue) {
+                document.getElementById('demo').innerHTML = newValue
+                console.log('set', newValue)
+            },
+            get() {
+                console.log('get')
+            }
+        })
+        console.log(data)
+        // document.getElementById('demo').innerHTML = data.num
+        // 数据劫持
+        // vue里面的所有数据都别Object.defineProperty劫持了，你如果修改数据会触发里面set，获取数据会触发里面get
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+        {{name}}
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        let data = {
+            name: 'yao'
+        }
+        // Vue.nextTick可以让数据完全渲染到视图之后，再去触发逻辑
+        new Vue({
+            el: "#demo",
+            data,
+            mounted() {
+                // render
+                // 数据层变的时候，不是立即更新真实DOM，它需要一个差异比对的更新过程
+                Vue.set(data, 'name', 'jing')
+                // 视图是真的变为jing才触发对应的逻辑
+                // setTimeout(() => {
+                //     // 虚拟DOM变真实DOM是需要事件的
+                //     console.log(document.querySelector('#demo').innerHTML) // yao
+                // }, 0)
+                Vue.nextTick(()=>{
+                    console.log(document.querySelector('#demo').innerHTML) // yao
+                })
+            },
+        })
+    </script>
+</body>
+
+</html>

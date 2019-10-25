@@ -41,7 +41,7 @@ class Observer {
         fns.forEach(fn => {
             fn(param);
         });
-    };
+    }
 }
 
 export default new Observer()
