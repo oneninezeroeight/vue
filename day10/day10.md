@@ -47,4 +47,58 @@ data(){
         }
     }
 }
-````
+```
+
+# SSR
+
+Vue这种项目不适合爬虫，前端渲染，所以首页比较简单的，没有关键信息搜索引擎去检索
+
+Vue.js 是构建客户端应用程序的框架。默认情况下，可以在浏览器中输出 Vue 组件，进行生成 DOM 和操作 DOM。然而，也可以将同一个组件渲染为服务器端的 HTML 字符串，将它们直接发送到浏览器，
+
+> server side render
+
+服务端渲染
+
+```bash
+npm install vue vue-server-renderer --save
+```
+
+在后端运行，我们去配合express服务器
+
+让express帮我们把代码渲染好，再放到浏览器上面，服务器压力会增
+```js
+var express = require('express');
+var router = express.Router();
+var Vue = require('vue')
+const app = new Vue({
+  template: `<div>Hello World</div>`
+})
+const renderer = require('vue-server-renderer').createRenderer()
+/* GET home page. */
+router.get('/', async function (req, res, next) {
+  let html = await renderer.renderToString(app)
+  res.send();
+});
+module.exports = router;
+```
+
+# typescript
+
+```bash
+npm install -g typescript
+```
+
+test.ts
+```ts
+function greeter(person) {
+    return "Hello, " + person;
+}
+
+let user:string = true;
+
+document.body.innerHTML = greeter(user);
+```
+编译为JS
+```
+tsc test.ts
+```

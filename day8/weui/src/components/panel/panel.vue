@@ -55,8 +55,8 @@ export default {
     getNews() {
       let _self = this;
       axios
-        // .get("https://cnodejs.org/api/v1/topics", {
-        .get("http://localhost:3000/cnode", {
+        .get("https://cnodejs.org/api/v1/topics", {
+        // .get("http://localhost:3000/cnode", {
           params: {
             page: this.page++, //Number 页数
             tab: this.tab, // String 主题分类。目前有 ask share job good
